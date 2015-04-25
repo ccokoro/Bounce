@@ -76,6 +76,12 @@ if(Meteor.isServer){
         var currentUserId = this.userId;
         return PlayersList.find({createdBy: currentUserId})
                 });
+
+    //we could use this, but just change it to PlayersList.find()
+    //but we could also not remove the autopublish package
+    //because we want the users all to see each other
+    //no secure data, maybe require wellesley email for users
+    //block users?
     
     Meteor.methods({
             'insertPlayerData': function(playerNameVar){ 
